@@ -12,16 +12,16 @@ function verifyMineSweeper(input: string, expected: string) {
   function minesweeper(input: string) {
     let result = '';
     input.split('').forEach((char, index) => {
+      if (char === '*') {
+        result += char;
+        return;
+      }
       let value = 0;
       if (input[index+1] === '*') {
         value++;
       }
 
-      if (value > 0) {
-        result += `${value}`;
-        return;
-      }
-      result += '*'
+      result += `${value}`;
     })
     return result;
   }
