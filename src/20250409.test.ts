@@ -1,5 +1,15 @@
 import {describe, expect, test} from "vitest";
 
+function verifyMineSweeper(input: string, expected: string) {
+  function minesweeper(input: string) {
+    return `1*2**2
+1234*2
+01*211`;
+  }
+
+  expect(minesweeper(input)).toBe(expected);
+}
+
 describe("20250409", () => {
   test("pass", () => {
     const input =
@@ -9,14 +19,7 @@ describe("20250409", () => {
     const expected =
 `1*2**2
 1234*2
-01*211`
-
-    function minesweeper(input: string) {
-      return `1*2**2
-1234*2
-01*211`
-    }
-
-    expect(minesweeper(input)).toBe(expected);
+01*211`;
+    verifyMineSweeper(input, expected);
   });
 });
