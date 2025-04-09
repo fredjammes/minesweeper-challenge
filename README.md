@@ -1,1 +1,1 @@
-# tdd-ts-boilerplate
+# Minesweeper challenge
