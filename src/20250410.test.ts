@@ -3,10 +3,12 @@ import { describe, expect, test } from 'vitest';
 function minesweeper(input: string) {
   if (input.includes('*')) {
     return input.split('').map(c => {
-      if (c === '*') {
-        return '*';
+      if (input.includes('*')) {
+        if (c === '*') {
+          return '*';
+        }
+        return '';
       }
-      return '';
     }).join('');
   }
   return input.split('').map(c => {
