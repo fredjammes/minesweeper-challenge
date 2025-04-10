@@ -1,17 +1,13 @@
 import { describe, expect, test } from 'vitest';
 
 function minesweeper(input: string) {
-  if (input.includes('*')) {
-    return input.split('').map(c => {
-      if (input.includes('*')) {
-        if (c === '*') {
-          return '*';
-        }
-        return '';
-      }
-    }).join('');
-  }
   return input.split('').map(c => {
+    if (input.includes('*')) {
+      if (c === '*') {
+        return '*';
+      }
+      return '';
+    }
     if (c === '.') {
       return '0';
     }
