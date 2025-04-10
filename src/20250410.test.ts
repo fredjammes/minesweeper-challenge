@@ -2,12 +2,12 @@ import { describe, expect, test } from 'vitest';
 
 function minesweeper(input: string) {
   return input.split('').map(c => {
-    if (input.includes('*')) {
-      if (c === '*')
-        return '*';
-      return '1';
+    if (!input.includes('*')) {
+      return '0';
     }
-    return '0';
+    if (c === '*')
+      return '*';
+    return '1';
   }).join('');
 }
 
@@ -33,5 +33,9 @@ describe('20250410', () => {
 
   test('', () => {
     expect(minesweeper('.*')).toBe('1*');
+  });
+
+  test('', () => {
+    expect(minesweeper('.**')).toBe('1**');
   });
 });
