@@ -2,9 +2,19 @@ import { describe, expect, test } from 'vitest';
 
 function minesweeper(input: string) {
   if (input.includes('*')) {
-    return input.split('').map(c => c === '*' ? '*' : '').join('');
+    return input.split('').map(c => {
+      if (c === '*') {
+        return '*';
+      }
+      return '';
+    }).join('');
   }
-  return input.split('').map(c => c === '.' ? '0' : '').join('');
+  return input.split('').map(c => {
+    if (c === '.') {
+      return '0';
+    }
+    return '';
+  }).join('');
 }
 
 describe('20250410', () => {
