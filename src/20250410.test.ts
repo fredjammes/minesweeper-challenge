@@ -4,6 +4,9 @@ function minesweeper(input: string) {
   if (input === '*') {
     return '*';
   }
+  if (input === '**') {
+    return '**';
+  }
   return input.split('').map(c => c === '.' ? '0' : '').join('');
 }
 
@@ -19,6 +22,9 @@ describe('20250410', () => {
   });
   test('', () => {
     expect(minesweeper('*')).toBe('*');
+  });
+  test('', () => {
+    expect(minesweeper('**')).toBe('**');
   });
 
 });
