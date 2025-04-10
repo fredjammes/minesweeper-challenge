@@ -48,4 +48,8 @@ describe('20250410', () => {
     expect(minesweeper('.*.*')).toBe('1*2*');
   });
 
+  test('', () => {
+    expect(minesweeper('*.*.*')).toBe('*2*2*');
+  });
+
 });
