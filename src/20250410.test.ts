@@ -1,9 +1,7 @@
 import { describe, expect, test } from 'vitest';
 
 function minesweeper(input: string) {
-  if (input === '.') return '0';
-  if (input === '..') return '00';
-  return '000';
+  return input.split('').map(c => c === '.' ? '0' : '').join('');
 }
 
 describe('20250410', () => {
