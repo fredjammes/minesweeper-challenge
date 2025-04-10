@@ -3,7 +3,9 @@ import { describe, expect, test } from 'vitest';
 function minesweeper(input: string) {
   return input.split('').map(c => {
     if (input.includes('*')) {
-      return '*';
+      if (c === '*')
+        return '*';
+      return '1';
     }
     return '0';
   }).join('');
@@ -29,4 +31,7 @@ describe('20250410', () => {
     expect(minesweeper('***')).toBe('***');
   });
 
+  test('', () => {
+    expect(minesweeper('.*')).toBe('1*');
+  });
 });
