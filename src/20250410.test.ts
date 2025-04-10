@@ -8,10 +8,7 @@ function minesweeper(input: string) {
       }
       return '';
     }
-    if (c === '.') {
-      return '0';
-    }
-    return '';
+    return '0';
   }).join('');
 }
 
