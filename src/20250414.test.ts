@@ -9,10 +9,7 @@ import { describe, test, expect } from 'vitest';
 // 01*211
 
 function minesweeper(input: string) {
-  if (input === '......') return '000000';
-  if (input === '...') return '000';
-  if (input === '..') return '00';
-  return '0';
+  return new Array(input.length).fill('0').join('');
 }
 
 describe('20250414', () => {
