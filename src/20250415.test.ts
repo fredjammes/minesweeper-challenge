@@ -9,7 +9,7 @@ import { describe, test, expect } from 'vitest';
 // 01*211
 
 function minesweeper(input: string) {
-
+  return '0';
 }
 
 describe('date', () => {
