@@ -11,11 +11,12 @@ import { describe, test, expect } from 'vitest';
 function solveCharacter(c: string, input: string) {
   if (input.includes('*'))
     return '*';
+  return '0';
 }
 
 function minesweeper(input: string) {
   if (input.includes('*')) return input.split('').map(c => solveCharacter(c, input)).join('');
-  return input.split('').map(_ => '0').join('');
+  return input.split('').map(c => solveCharacter(c, input)).join('');
 }
 
 describe('date', () => {
