@@ -9,7 +9,7 @@ import { describe, test } from 'vitest';
 // 01*211
 
 describe('date', () => {
-  test(() => {
+  test('', () => {
 
   });
 });
