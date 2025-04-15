@@ -8,12 +8,13 @@ import { describe, test, expect } from 'vitest';
 // 1234*2
 // 01*211
 
-function solveCharacter(c: string) {
-  return '*';
+function solveCharacter(c: string, input: string) {
+  if (input.includes('*'))
+    return '*';
 }
 
 function minesweeper(input: string) {
-  if (input.includes('*')) return input.split('').map(c => solveCharacter(c)).join('');
+  if (input.includes('*')) return input.split('').map(c => solveCharacter(c, input)).join('');
   return input.split('').map(_ => '0').join('');
 }
 
