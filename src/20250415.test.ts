@@ -9,9 +9,7 @@ import { describe, test, expect } from 'vitest';
 // 01*211
 
 function minesweeper(input: string) {
-  if (input === '*') return '*';
-  if (input === '**') return '**';
-  if (input === '***') return '***';
+  if (input.includes('*')) return input.split('').map(_ => '*').join('');
   return input.split('').map(_ => '0').join('');
 }
 
