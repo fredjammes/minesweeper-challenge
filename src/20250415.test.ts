@@ -9,6 +9,7 @@ import { describe, test, expect } from 'vitest';
 // 01*211
 
 function minesweeper(input: string) {
+  if (input === '*') return '*';
   return input.split('').map(_ => '0').join('');
 }
 
@@ -21,5 +22,8 @@ describe('date', () => {
   });
   test('', () => {
     expect(minesweeper('...')).toBe('000');
+  });
+  test('', () => {
+    expect(minesweeper('*')).toBe('*');
   });
 });
