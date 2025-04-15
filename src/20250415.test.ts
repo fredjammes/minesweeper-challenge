@@ -15,7 +15,6 @@ function solveCharacter(c: string, input: string) {
 }
 
 function minesweeper(input: string) {
-  if (input.includes('*')) return input.split('').map(c => solveCharacter(c, input)).join('');
   return input.split('').map(c => solveCharacter(c, input)).join('');
 }
 
