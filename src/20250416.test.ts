@@ -52,11 +52,11 @@ function getPosition(fromIndex: number, inString: string): { x: number; y: numbe
   let z = 0;
   let result = { x: 0, y: 0 };
   if (fromIndex >= z) {
-    result = { x: 0, y: 0 };
+    result = { x: z, y: 0 };
     z++;
   }
   if (fromIndex >= z) {
-    result = { x: 1, y: 0 };
+    result = { x: z, y: 0 };
     z++;
   }
   if (fromIndex >= z) {
