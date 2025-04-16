@@ -50,17 +50,19 @@ function minesweeper(input: string) {
 
 function getPosition(fromIndex: number, inString: string): { x: number; y: number; } | undefined {
   let z = 0;
-  if (fromIndex === z) {
-    return { x: 0, y: 0 };
+  let result = { x: 0, y: 0 };
+  if (fromIndex >= z) {
+    result = { x: 0, y: 0 };
+    z++;
   }
-  z++;
-  if (fromIndex === z) {
-    return { x: 1, y: 0 };
+  if (fromIndex >= z) {
+    result = { x: 1, y: 0 };
+    z++;
   }
-  z++;
-  if (fromIndex === z) {
-    return { x: 2, y: 0 };
+  if (fromIndex >= z) {
+    result = { x: 2, y: 0 };
   }
+  return result;
 }
 
 describe('date', () => {
