@@ -71,4 +71,7 @@ describe('date', () => {
   test('', () => {
     expect(minesweeper('*.*')).toBe('*2*');
   });
+  test('', () => {
+    expect(minesweeper('*.*.')).toBe('*2*1');
+  });
 });
