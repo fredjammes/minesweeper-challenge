@@ -52,6 +52,9 @@ function getPosition(fromIndex: number, inString: string): { x: number; y: numbe
   if (fromIndex === 0) {
     return { x: 0, y: 0 };
   }
+  if (fromIndex === 1) {
+    return { x: 1, y: 0 };
+  }
 }
 
 describe('date', () => {
