@@ -37,6 +37,8 @@ function getCellValue(input: string, index: number) {
 }
 
 function solveCharacter(input: string, index: number) {
+  // const inputLines = input.split('\n');
+  // const inputAs2DArray = inputLines.map(line => line.split(''));
   if (isMine(getCellValue(input, index)))
     return '*';
   return countMineInNeighbourhood(input, index);
@@ -44,6 +46,10 @@ function solveCharacter(input: string, index: number) {
 
 function minesweeper(input: string) {
   return input.split('').map((_, index) => solveCharacter(input, index)).join('');
+}
+
+function getPosition(fromIndex: number, inString: string) {
+
 }
 
 describe('date', () => {
@@ -80,5 +86,7 @@ describe('date', () => {
   //     '1';
   //   expect(minesweeper(input)).toBe(expected);
   // });
-
+  test('', () => {
+    expect(getPosition(0, '.')).toBe({ x: 0, y: 0 });
+  });
 });
