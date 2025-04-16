@@ -51,16 +51,9 @@ function minesweeper(input: string) {
 function getPosition(fromIndex: number, inString: string): { x: number; y: number; } | undefined {
   let z = 0;
   let result = { x: 0, y: 0 };
-  if (fromIndex >= z) {
+  while (fromIndex >= z) {
     result = { x: z, y: 0 };
     z++;
-  }
-  if (fromIndex >= z) {
-    result = { x: z, y: 0 };
-    z++;
-  }
-  if (fromIndex >= z) {
-    result = { x: z, y: 0 };
   }
   return result;
 }
