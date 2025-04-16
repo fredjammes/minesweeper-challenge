@@ -32,9 +32,12 @@ function countMineInNeighbourhood(input: string, index: number) {
   return result;
 }
 
+function getCellValue(input: string, index: number) {
+  return input[index];
+}
+
 function solveCharacter(input: string, index: number) {
-  const currentCellValue = input[index];
-  if (isMine(currentCellValue))
+  if (isMine(getCellValue(input, index)))
     return '*';
   return countMineInNeighbourhood(input, index);
 }
