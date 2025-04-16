@@ -49,13 +49,12 @@ function minesweeper(input: string) {
 }
 
 function getPosition(fromIndex: number, inString: string): { x: number; y: number; } | undefined {
-  let z = 1;
-  let result = { x: 1, y: 1 };
-  while (fromIndex + 1 >= z) {
-    result = { x: z, y: 1 };
-    z++;
+  let x = 1;
+  let y = 1;
+  while (fromIndex + 1 > x) {
+    x++;
   }
-  return result;
+  return { x, y };
 }
 
 describe('date', () => {
@@ -101,7 +100,7 @@ describe('date', () => {
   test('', () => {
     expect(getPosition(2, '...')).toStrictEqual({ x: 3, y: 1 });
   });
-  // test('', () => {
-  //   expect(getPosition(3, '.\n.')).toStrictEqual({ x: 2, y: 0 });
-  // });
+  test('', () => {
+    expect(getPosition(3, '.\n.')).toStrictEqual({ x: 1, y: 1 });
+  });
 });
