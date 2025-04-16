@@ -63,21 +63,9 @@ describe('date', () => {
     expect(minesweeper('***')).toBe('***');
   });
   test('', () => {
-    expect(minesweeper('.*')).toBe('1*');
+    expect(minesweeper('..**.*.*.')).toBe('01**2*2*1');
   });
   test('', () => {
-    expect(minesweeper('.*.')).toBe('1*1');
-  });
-  test('', () => {
-    expect(minesweeper('*.*')).toBe('*2*');
-  });
-  test('', () => {
-    expect(minesweeper('*.*.')).toBe('*2*1');
-  });
-  test('', () => {
-    expect(minesweeper('**.*.')).toBe('**2*1');
-  });
-  test('', () => {
-    expect(minesweeper('.*.*.*.')).toBe('1*2*2*1');
+    expect(minesweeper('**.*.*.')).toBe('**2*2*1');
   });
 });
