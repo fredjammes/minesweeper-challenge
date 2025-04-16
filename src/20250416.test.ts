@@ -12,10 +12,21 @@ function isMine(c: string) {
   return c === '*';
 }
 
+function isNeighbourOfAMine(input: string, index: number) {
+  if (isMine(input[index + 1])) {
+    return true;
+  }
+  return isMine(input[index - 1]);
+
+}
+
 function solveCharacter(input: string, index: number) {
   const currentCellValue = input[index];
   if (isMine(currentCellValue))
     return '*';
+  if (isNeighbourOfAMine(input, index)) {
+    return '1';
+  }
   return '0';
 }
 
