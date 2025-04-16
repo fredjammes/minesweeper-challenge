@@ -13,11 +13,7 @@ function isMine(c: string) {
 }
 
 function isNeighbourOfAMine(input: string, index: number) {
-  if (isMine(input[index + 1])) {
-    return true;
-  }
-  return isMine(input[index - 1]);
-
+  return isMine(input[index + 1]) || isMine(input[index - 1]);
 }
 
 function solveCharacter(input: string, index: number) {
