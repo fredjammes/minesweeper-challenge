@@ -48,8 +48,10 @@ function minesweeper(input: string) {
   return input.split('').map((_, index) => solveCharacter(input, index)).join('');
 }
 
-function getPosition(fromIndex: number, inString: string) {
-
+function getPosition(fromIndex: number, inString: string): { x: number; y: number; } | undefined {
+  if (fromIndex === 0) {
+    return { x: 0, y: 0 };
+  }
 }
 
 describe('date', () => {
@@ -87,6 +89,6 @@ describe('date', () => {
   //   expect(minesweeper(input)).toBe(expected);
   // });
   test('', () => {
-    expect(getPosition(0, '.')).toBe({ x: 0, y: 0 });
+    expect(getPosition(0, '.')).toStrictEqual({ x: 0, y: 0 });
   });
 });
