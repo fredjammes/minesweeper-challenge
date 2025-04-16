@@ -52,4 +52,7 @@ describe('date', () => {
   test('', () => {
     expect(minesweeper('.*')).toBe('1*');
   });
+  test('', () => {
+    expect(minesweeper('.*.')).toBe('1*1');
+  });
 });
