@@ -91,4 +91,7 @@ describe('date', () => {
   test('', () => {
     expect(getPosition(0, '.')).toStrictEqual({ x: 0, y: 0 });
   });
+  test('', () => {
+    expect(getPosition(1, '..')).toStrictEqual({ x: 1, y: 0 });
+  });
 });
