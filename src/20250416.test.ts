@@ -55,6 +55,9 @@ function getPosition(fromIndex: number, inString: string): { x: number; y: numbe
   if (fromIndex === 1) {
     return { x: 1, y: 0 };
   }
+  if (fromIndex === 2) {
+    return { x: 2, y: 0 };
+  }
 }
 
 describe('date', () => {
@@ -96,5 +99,8 @@ describe('date', () => {
   });
   test('', () => {
     expect(getPosition(1, '..')).toStrictEqual({ x: 1, y: 0 });
+  });
+  test('', () => {
+    expect(getPosition(2, '...')).toStrictEqual({ x: 2, y: 0 });
   });
 });
