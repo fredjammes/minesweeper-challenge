@@ -12,14 +12,15 @@ function isMine(c: string) {
   return c === '*';
 }
 
-function solveCharacter(c: string, input: string) {
-  if (isMine(c))
+function solveCharacter(input: string, index: number) {
+  const currentCellValue = input[index];
+  if (isMine(currentCellValue))
     return '*';
   return '0';
 }
 
 function minesweeper(input: string) {
-  return input.split('').map(c => solveCharacter(c, input)).join('');
+  return input.split('').map((_, index) => solveCharacter(input, index)).join('');
 }
 
 describe('date', () => {
