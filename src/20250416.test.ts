@@ -57,7 +57,8 @@ function getPosition(fromIndex: number, inString: string): { x: number; y: numbe
   if (fromIndex === z) {
     return { x: 1, y: 0 };
   }
-  if (fromIndex === 2) {
+  z = 2;
+  if (fromIndex === z) {
     return { x: 2, y: 0 };
   }
 }
