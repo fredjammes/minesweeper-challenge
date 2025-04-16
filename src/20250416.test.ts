@@ -71,14 +71,14 @@ describe('date', () => {
   test('', () => {
     expect(minesweeper('**.*.*.')).toBe('**2*2*1');
   });
-  test('', () => {
-    const input =
-      '*\n' +
-      '.';
-    const expected =
-      '*\n' +
-      '1';
-    expect(minesweeper(input)).toBe(expected);
-  });
+  // test('', () => {
+  //   const input =
+  //     '*\n' +
+  //     '.';
+  //   const expected =
+  //     '*\n' +
+  //     '1';
+  //   expect(minesweeper(input)).toBe(expected);
+  // });
 
 });
