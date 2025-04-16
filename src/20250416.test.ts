@@ -17,7 +17,7 @@ function isLeftNeighbourAMine(input: string, index: number) {
 }
 
 function isRightNeighbourAMine(input: string, index: number) {
-  return isMine(input[index + 1]);
+  return isMine(getCellValue(input, index + 1));
 }
 
 function countMineInNeighbourhood(input: string, index: number) {
