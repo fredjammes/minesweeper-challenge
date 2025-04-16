@@ -60,7 +60,7 @@ function getPosition(fromIndex: number, inString: string): { x: number; y: numbe
     z++;
   }
   if (fromIndex >= z) {
-    result = { x: 2, y: 0 };
+    result = { x: z, y: 0 };
   }
   return result;
 }
