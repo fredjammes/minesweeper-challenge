@@ -12,18 +12,31 @@ function isMine(c: string) {
   return c === '*';
 }
 
-function isNeighbourOfAMine(input: string, index: number) {
-  return isMine(input[index + 1]) || isMine(input[index - 1]);
+function isLeftNeighbourAMine(input: string, index: number) {
+  return isMine(input[index - 1]);
+}
+
+function isRightNeighbourAMine(input: string, index: number) {
+  return isMine(input[index + 1]);
+}
+
+function countMineInNeighbourhood(input: string, index: number) {
+  let result = 0;
+  if (isLeftNeighbourAMine(input, index)) {
+    result++;
+  }
+  if (isRightNeighbourAMine(input, index)) {
+    result++;
+  }
+
+  return result;
 }
 
 function solveCharacter(input: string, index: number) {
   const currentCellValue = input[index];
   if (isMine(currentCellValue))
     return '*';
-  if (isNeighbourOfAMine(input, index)) {
-    return '1';
-  }
-  return '0';
+  return countMineInNeighbourhood(input, index);
 }
 
 function minesweeper(input: string) {
