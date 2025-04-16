@@ -13,7 +13,7 @@ function isMine(c: string) {
 }
 
 function isLeftNeighbourAMine(input: string, index: number) {
-  return isMine(input[index - 1]);
+  return isMine(getCellValue(input, index - 1));
 }
 
 function isRightNeighbourAMine(input: string, index: number) {
