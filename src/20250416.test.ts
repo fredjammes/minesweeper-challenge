@@ -52,16 +52,31 @@ function getPosition(fromIndex: number, inString: string): { x: number; y: numbe
   let x = 1;
   let y = 1;
   const lines = inString.split('\n');
-  while (lines[y - 1].length > x) {
-    const currentLine = lines[y - 1];
-    if (x >= currentLine.length) {
+
+  while (!isLastLine() || !isLastCharOfLine()) {
+    if (!isLastLine()) {
       y++;
+    }
+
+    if (x >= getCurrentLine().length) {
       x = 1;
     } else {
       x++;
     }
   }
   return { x, y };
+
+  function isLastCharOfLine() {
+    return x === getCurrentLine().length;
+  }
+
+  function isLastLine() {
+    return y === lines.length;
+  }
+
+  function getCurrentLine() {
+    return lines[y - 1];
+  }
 }
 
 describe('date', () => {
@@ -107,7 +122,13 @@ describe('date', () => {
   test('', () => {
     expect(getPosition(2, '...')).toStrictEqual({ x: 3, y: 1 });
   });
+  test('', () => {
+    expect(getPosition(3, '.\n.')).toStrictEqual({ x: 1, y: 2 });
+  });
+  test('', () => {
+    expect(getPosition(4, '..\n.')).toStrictEqual({ x: 1, y: 2 });
+  });
   test('a', () => {
-    expect(getPosition(3, '.\n.')).toStrictEqual({ x: 1, y: 1 });
+    expect(getPosition(7, '..\n..\n.')).toStrictEqual({ x: 1, y: 3 });
   });
 });
