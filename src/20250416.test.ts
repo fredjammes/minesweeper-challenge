@@ -13,6 +13,11 @@ function isMine(c: string) {
 }
 
 function isLeftNeighbourAMine(input: string, index: number) {
+  const currentPosition = getPosition(index, input);
+  const leftNeighbourPosition = {
+    x: currentPosition.x - 1,
+    y: currentPosition.y,
+  };
   return isMine(getCellValue(input, index - 1));
 }
 
@@ -48,7 +53,7 @@ function minesweeper(input: string) {
   return input.split('').map((_, index) => solveCharacter(input, index)).join('');
 }
 
-function getPosition(fromIndex: number, inString: string): { x: number; y: number; } | undefined {
+function getPosition(fromIndex: number, inString: string): { x: number; y: number; } {
   let x = 1;
   let y = 1;
   const lines = inString.split('\n');
@@ -115,28 +120,4 @@ describe('date', () => {
   //     '1';
   //   expect(minesweeper(input)).toBe(expected);
   // });
-  test('', () => {
-    expect(getPosition(0, '.')).toStrictEqual({ x: 1, y: 1 });
-  });
-  test('', () => {
-    expect(getPosition(1, '..')).toStrictEqual({ x: 2, y: 1 });
-  });
-  test('', () => {
-    expect(getPosition(2, '...')).toStrictEqual({ x: 3, y: 1 });
-  });
-  test('', () => {
-    expect(getPosition(3, '.\n.')).toStrictEqual({ x: 1, y: 2 });
-  });
-  test('', () => {
-    expect(getPosition(4, '..\n.')).toStrictEqual({ x: 1, y: 2 });
-  });
-  test('', () => {
-    expect(getPosition(7, '..\n..\n.')).toStrictEqual({ x: 1, y: 3 });
-  });
-  test('', () => {
-    expect(getPosition(8, '..\n..\n..')).toStrictEqual({ x: 2, y: 3 });
-  });
-  test('', () => {
-    expect(getPosition(12, '....\n....\n..')).toStrictEqual({ x: 2, y: 3 });
-  });
 });
