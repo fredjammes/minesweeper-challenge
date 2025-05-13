@@ -5,7 +5,7 @@ function minesweeper(input: string): string {
     return new Array(input.length).fill('*').join('');
   }
   if (input === '**') {
-    return '**';
+    return new Array(input.length).fill('*').join('');
   }
   if (input === '***') {
     return '***';
