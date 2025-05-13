@@ -4,7 +4,7 @@ function isMine(c: string) {
   return c === '*';
 }
 
-function countNeighbour() {
+function countNeighbour(charIndex: number, inputAsArray: string[]) {
   return '1';
 }
 
@@ -12,7 +12,7 @@ function solveChar(charIndex: number, inputAsArray: string[]) {
   if (isMine(inputAsArray[charIndex])) {
     return '*';
   }
-  return countNeighbour();
+  return countNeighbour(charIndex, inputAsArray);
 }
 
 function minesweeper(input: string): string {
