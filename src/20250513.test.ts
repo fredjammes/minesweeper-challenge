@@ -12,7 +12,7 @@ function minesweeper(input: string): string {
 // 1234*2
 // 01*211
 
-describe('minesweeper', () => {
+describe('20250513', () => {
   test('', () => {
     expect(minesweeper('.')).toBe('0');
   });
