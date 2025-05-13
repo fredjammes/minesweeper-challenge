@@ -13,7 +13,7 @@ function minesweeper(input: string): string {
 // 01*211
 
 describe('minesweeper', () => {
-  test('returns "." for input "."', () => {
+  test('', () => {
     expect(minesweeper('.')).toBe('0');
   });
 });
