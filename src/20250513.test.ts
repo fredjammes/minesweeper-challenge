@@ -8,8 +8,8 @@ function countNeighbour() {
   return '1';
 }
 
-function solveChar(c: string, inputAsArray: string[]) {
-  if (isMine(c)) {
+function solveChar(charIndex: number, inputAsArray: string[]) {
+  if (isMine(inputAsArray[charIndex])) {
     return '*';
   }
   return countNeighbour();
@@ -18,7 +18,7 @@ function solveChar(c: string, inputAsArray: string[]) {
 function minesweeper(input: string): string {
   if (input.includes('*')) {
     const inputAsArray = input.split('');
-    return inputAsArray.map(c => solveChar(c, inputAsArray)).join('');
+    return inputAsArray.map((_, index) => solveChar(index, inputAsArray)).join('');
   }
   return new Array(input.length).fill('0').join('');
 }
