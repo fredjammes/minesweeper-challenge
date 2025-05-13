@@ -1,7 +1,11 @@
 import { describe, test, expect } from 'vitest';
 
+function isMine(c: string) {
+  return c === '*';
+}
+
 function solveChar(c: string, inputAsArray: string[]) {
-  if (c === '*') {
+  if (isMine(c)) {
     return '*';
   }
   return '1';
