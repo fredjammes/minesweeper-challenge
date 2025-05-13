@@ -5,7 +5,7 @@ function minesweeper(input: string): string {
     return new Array(input.length).fill('0').join('');
   }
   if (input === '..') {
-    return '00';
+    return new Array(input.length).fill('0').join('');
   }
   return '0';
 }
