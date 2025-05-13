@@ -2,7 +2,7 @@ import { describe, test, expect } from 'vitest';
 
 function minesweeper(input: string): string {
   if (input === '...') {
-    return '000';
+    return new Array(input.length).fill('0').join('');
   }
   if (input === '..') {
     return '00';
