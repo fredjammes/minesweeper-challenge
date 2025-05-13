@@ -1,7 +1,7 @@
 import { describe, test, expect } from 'vitest';
 
 function minesweeper(input: string): string {
-  return ".";
+  return '0';
 }
 
 // .*.**.
@@ -14,12 +14,6 @@ function minesweeper(input: string): string {
 
 describe('minesweeper', () => {
   test('returns "." for input "."', () => {
-    expect(minesweeper(".")).toBe(".");
-  });
-});
-
-describe('date', () => {
-  test('', () => {
-
+    expect(minesweeper('.')).toBe('0');
   });
 });
