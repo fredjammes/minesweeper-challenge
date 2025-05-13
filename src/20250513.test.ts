@@ -5,7 +5,14 @@ function isMine(c: string) {
 }
 
 function countNeighbour(charIndex: number, inputAsArray: string[]) {
-  return '1';
+  let result = 0;
+  if (inputAsArray[charIndex - 1] === '*') {
+    result++;
+  }
+  if (inputAsArray[charIndex + 1] === '*') {
+    result++;
+  }
+  return result;
 }
 
 function solveChar(charIndex: number, inputAsArray: string[]) {
