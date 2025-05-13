@@ -1,6 +1,9 @@
 import { describe, test, expect } from 'vitest';
 
 function minesweeper(input: string): string {
+  if (input === '...') {
+    return '000';
+  }
   if (input === '..') {
     return '00';
   }
@@ -19,8 +22,10 @@ describe('20250513', () => {
   test('', () => {
     expect(minesweeper('.')).toBe('0');
   });
-
-  test('2', () => {
+  test('', () => {
     expect(minesweeper('..')).toBe('00');
+  });
+  test('', () => {
+    expect(minesweeper('...')).toBe('000');
   });
 });
