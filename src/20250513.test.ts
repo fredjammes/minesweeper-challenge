@@ -1,6 +1,17 @@
 import { describe, test, expect } from 'vitest';
 
+function solveChar(c: string, inputAsArray: string[]) {
+  if (c === '*') {
+    return '*';
+  }
+  return '1';
+}
+
 function minesweeper(input: string): string {
+  if (input === '.*') {
+    const inputAsArray = input.split('');
+    return inputAsArray.map(c => solveChar(c, inputAsArray)).join('');
+  }
   if (input.includes('*')) {
     return new Array(input.length).fill('*').join('');
   }
@@ -33,5 +44,8 @@ describe('20250513', () => {
   });
   test('', () => {
     expect(minesweeper('***')).toBe('***');
+  });
+  test('', () => {
+    expect(minesweeper('.*')).toBe('1*');
   });
 });
