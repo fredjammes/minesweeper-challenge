@@ -8,12 +8,9 @@ function solveChar(c: string, inputAsArray: string[]) {
 }
 
 function minesweeper(input: string): string {
-  if (input === '.*') {
+  if (input.includes('*')) {
     const inputAsArray = input.split('');
     return inputAsArray.map(c => solveChar(c, inputAsArray)).join('');
-  }
-  if (input.includes('*')) {
-    return new Array(input.length).fill('*').join('');
   }
   return new Array(input.length).fill('0').join('');
 }
@@ -47,5 +44,8 @@ describe('20250513', () => {
   });
   test('', () => {
     expect(minesweeper('.*')).toBe('1*');
+  });
+  test('', () => {
+    expect(minesweeper('*.')).toBe('*1');
   });
 });
