@@ -13,15 +13,18 @@ function minesweeper(s: string) {
     return '';
   if (s.length === 1)
     return '0';
-  return '00';
+  if (s.length === 2)
+    return '00';
+  return '000';
 }
 
 describe('20250515-2', () => {
   test.each`
-    input     | expected
-    ${''}     | ${''}
-    ${'.'}    | ${'0'}
-    ${'..'}   | ${'00'}
+    input       | expected
+    ${''}       | ${''}
+    ${'.'}      | ${'0'}
+    ${'..'}     | ${'00'}
+    ${'...'}    | ${'000'}
   `('', ({ input, expected }) => {
     expect(minesweeper(input)).toBe(expected);
   });
