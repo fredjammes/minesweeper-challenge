@@ -10,13 +10,13 @@ import { describe, expect, test } from 'vitest';
 
 function minesweeper(s: string) {
   let result = '';
-  if (s.length === 0)
-    return '';
   if (s.length === 1)
-    return '0';
+    result = '0';
   if (s.length === 2)
-    return '00';
-  return '000';
+    result = '00';
+  if (s.length === 3)
+    result = '000';
+  return result;
 }
 
 describe('20250515-2', () => {
