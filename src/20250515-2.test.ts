@@ -13,7 +13,10 @@ function minesweeper(s: string) {
 }
 
 describe('20250515-2', () => {
-  test('', () => {
-    expect(minesweeper('')).toBe('');
+  test.each`
+    input | expected
+    ${''} | ${''}
+  `('', ({ input, expected }) => {
+    expect(minesweeper(input)).toBe(expected);
   });
 });
