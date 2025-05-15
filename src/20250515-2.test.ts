@@ -9,6 +9,7 @@ import { describe, expect, test } from 'vitest';
 // 01*211
 
 function minesweeper(s: string) {
+  let result = '';
   if (s.length === 0)
     return '';
   if (s.length === 1)
