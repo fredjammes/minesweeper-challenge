@@ -27,7 +27,8 @@ function minesweeper(input: string): string {
     const inputAsArray = input.split('');
     return inputAsArray.map((_, index) => solveChar(index, inputAsArray)).join('');
   }
-  return new Array(input.length).fill('0').join('');
+  const inputAs2DArray = input.split('\n').map(line => line.split(''));
+  return inputAs2DArray.map(line => new Array(line.length).fill('0').join('')).join('\n');
 }
 
 // .*.**.
@@ -68,5 +69,8 @@ describe('20250515', () => {
   });
   test('', () => {
     expect(minesweeper('.**')).toBe('1**');
+  });
+  test('', () => {
+    expect(minesweeper('.\n.')).toBe('0\n0');
   });
 });
