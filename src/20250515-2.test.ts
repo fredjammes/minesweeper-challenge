@@ -12,7 +12,7 @@ function minesweeper(s: string) {
   let result = '';
   if (s.length > 0)
     result = '0';
-  if (s.length === 2)
+  if (s.length > 1)
     result = '00';
   if (s.length === 3)
     result = '000';
