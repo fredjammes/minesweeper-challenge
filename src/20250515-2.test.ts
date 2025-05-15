@@ -1,0 +1,15 @@
+import { describe, expect, test } from 'vitest';
+
+// .*.**.
+// ....*.
+// ..*...
+// gives
+// 1*2**2
+// 1234*2
+// 01*211
+
+describe('20250515-2', () => {
+  test('', () => {
+    expect('').toBe('');
+  });
+});
