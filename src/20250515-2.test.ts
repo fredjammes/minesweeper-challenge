@@ -8,8 +8,12 @@ import { describe, expect, test } from 'vitest';
 // 1234*2
 // 01*211
 
+function minesweeper(s: string) {
+  return '';
+}
+
 describe('20250515-2', () => {
   test('', () => {
-    expect('').toBe('');
+    expect(minesweeper('')).toBe('');
   });
 });
