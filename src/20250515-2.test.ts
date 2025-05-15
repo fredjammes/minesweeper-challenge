@@ -11,14 +11,17 @@ import { describe, expect, test } from 'vitest';
 function minesweeper(s: string) {
   if (s.length === 0)
     return '';
-  return '0';
+  if (s.length === 1)
+    return '0';
+  return '00';
 }
 
 describe('20250515-2', () => {
   test.each`
-    input   | expected
-    ${''}   | ${''}
-    ${'.'}  | ${'0'}
+    input     | expected
+    ${''}     | ${''}
+    ${'.'}    | ${'0'}
+    ${'..'}   | ${'00'}
   `('', ({ input, expected }) => {
     expect(minesweeper(input)).toBe(expected);
   });
