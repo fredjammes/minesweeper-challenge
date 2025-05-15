@@ -16,7 +16,8 @@ function minesweeper(s: string) {
   x++;
   if (s.length > x)
     result += '0';
-  if (s.length > 2)
+  x++;
+  if (s.length > x)
     result += '0';
   return result;
 }
