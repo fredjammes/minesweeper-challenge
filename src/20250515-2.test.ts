@@ -11,7 +11,7 @@ import { describe, expect, test } from 'vitest';
 function minesweeper(s: string) {
   let result = '';
   if (s.length > 0)
-    result = '0';
+    result += '0';
   if (s.length > 1)
     result = '00';
   if (s.length > 2)
