@@ -9,13 +9,16 @@ import { describe, expect, test } from 'vitest';
 // 01*211
 
 function minesweeper(s: string) {
-  return '';
+  if (s.length === 0)
+    return '';
+  return '0';
 }
 
 describe('20250515-2', () => {
   test.each`
-    input | expected
-    ${''} | ${''}
+    input   | expected
+    ${''}   | ${''}
+    ${'.'}  | ${'0'}
   `('', ({ input, expected }) => {
     expect(minesweeper(input)).toBe(expected);
   });
