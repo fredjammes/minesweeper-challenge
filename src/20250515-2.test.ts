@@ -34,6 +34,7 @@ describe('20250515-2', () => {
     ${'...'}    | ${'000'}
     ${'*'}      | ${'*'}
     ${'**'}      | ${'**'}
+    ${'***'}    | ${'***'}
   `('', ({ input, expected }) => {
     expect(minesweeper(input)).toBe(expected);
   });
