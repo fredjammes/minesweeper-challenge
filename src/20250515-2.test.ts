@@ -34,14 +34,14 @@ function minesweeper(input: string) {
   let result = '';
   if (input.includes('\n')) {
     const inputLines = input.split('\n');
+    result = '0';
     if (inputLines.length > 0) {
-      result = '0';
     }
     if (inputLines.length > 1) {
-      result = '0\n0';
+      result += '\n0';
     }
     if (inputLines.length > 2) {
-      result = '0\n0\n0';
+      result += '\n0';
     }
   } else {
     let x = 0;
