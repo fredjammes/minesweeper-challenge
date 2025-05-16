@@ -8,11 +8,15 @@ import { describe, expect, test } from 'vitest';
 // 1234*2
 // 01*211
 
+function isMine(solvingChar: string) {
+  return solvingChar === '*';
+}
+
 function solveCell(input: string, x: number) {
-  if (input[x] === '*') {
+  if (isMine(input[x])) {
     return '*';
   }
-  if (input[x + 1] === '*') {
+  if (isMine(input[x + 1])) {
     return '1';
   }
   return '0';
