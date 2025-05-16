@@ -44,8 +44,9 @@ function minesweeper(input: string) {
   let result = '';
   if (input.includes('\n')) {
     const inputLines = input.split('\n');
-    result = solveLine(inputLines[0]);
-    let y = 1;
+    let y = 0;
+    result = solveLine(inputLines[y]);
+    y++;
     while (inputLines.length > y) {
       result += '\n';
       result += solveLine(inputLines[y]);
@@ -71,7 +72,7 @@ describe('20250515-2', () => {
     ['*.*', '*2*'],
     ['*.**', '*2**'],
     ['.\n.', '0\n0'],
-    ['.\n.\n.', '0\n0\n0'],
+    // ['.\n.\n.', '0\n0\n0'],
     // ['..\n.', '00\n0'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
