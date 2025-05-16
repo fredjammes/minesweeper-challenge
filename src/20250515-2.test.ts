@@ -9,7 +9,7 @@ import { describe, expect, test } from 'vitest';
 // 01*211
 
 function solveCell(input: string) {
-  if (input.includes('*')) {
+  if (input[0] === '*') {
     return '*';
   }
   return '0';
@@ -26,16 +26,15 @@ function minesweeper(input: string) {
 }
 
 describe('20250515-2', () => {
-  test.each`
-    input       | expected
-    ${''}       | ${''}
-    ${'.'}      | ${'0'}
-    ${'..'}     | ${'00'}
-    ${'...'}    | ${'000'}
-    ${'*'}      | ${'*'}
-    ${'**'}      | ${'**'}
-    ${'***'}    | ${'***'}
-  `('', ({ input, expected }) => {
+  test.each([
+    ['', ''],
+    ['.', '0'],
+    ['..', '00'],
+    ['...', '000'],
+    ['*', '*'],
+    ['**', '**'],
+    ['***', '***'],
+  ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
 });
