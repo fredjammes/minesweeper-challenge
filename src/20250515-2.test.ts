@@ -38,7 +38,7 @@ function minesweeper(input: string) {
     let y = 1;
     while (inputLines.length > y) {
       result += '\n';
-      result += '0';
+      result += solveCell(inputLines[y], 0);
       y++;
     }
   } else {
