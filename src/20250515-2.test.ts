@@ -42,7 +42,8 @@ function minesweeper(input: string) {
     if (inputLines.length > y) {
       result += '\n0';
     }
-    if (inputLines.length > 2) {
+    y = 2;
+    if (inputLines.length > y) {
       result += '\n0';
     }
   } else {
