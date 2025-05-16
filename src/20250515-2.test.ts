@@ -30,6 +30,16 @@ function solveCell(input: string, x: number) {
   return countNeighbourMine(input, x);
 }
 
+function solveLine(input: string) {
+  let result = '';
+  let x = 0;
+  while (input.length > x) {
+    result += solveCell(input, x);
+    x++;
+  }
+  return result;
+}
+
 function minesweeper(input: string) {
   let result = '';
   if (input.includes('\n')) {
@@ -42,11 +52,7 @@ function minesweeper(input: string) {
       y++;
     }
   } else {
-    let x = 0;
-    while (input.length > x) {
-      result += solveCell(input, x);
-      x++;
-    }
+    result = solveLine(input);
   }
   return result;
 }
@@ -66,7 +72,7 @@ describe('20250515-2', () => {
     ['*.**', '*2**'],
     ['.\n.', '0\n0'],
     ['.\n.\n.', '0\n0\n0'],
-    // ['*\n*', '*\n*'],
+    // ['..\n.', '00\n0'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
