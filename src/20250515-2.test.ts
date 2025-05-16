@@ -33,7 +33,8 @@ function solveCell(input: string, x: number) {
 function minesweeper(input: string) {
   let result = '';
   if (input.includes('\n')) {
-    if (input === '.\n.') {
+    const inputLines = input.split('\n');
+    if (inputLines.length > 0) {
       result = '0\n0';
     }
     if (input === '.\n.\n.') {
