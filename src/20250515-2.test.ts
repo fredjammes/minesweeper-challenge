@@ -44,7 +44,7 @@ function minesweeper(input: string) {
   let result = '';
   if (input.includes('\n')) {
     const inputLines = input.split('\n');
-    result = '0';
+    result = solveLine(inputLines[0]);
     let y = 1;
     while (inputLines.length > y) {
       result += '\n';
