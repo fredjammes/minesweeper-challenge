@@ -8,11 +8,15 @@ import { describe, expect, test } from 'vitest';
 // 1234*2
 // 01*211
 
+function solveCell() {
+  return '0';
+}
+
 function minesweeper(s: string) {
   let result = '';
   let x = 0;
   while (s.length > x) {
-    result += '0';
+    result += solveCell();
     x++;
   }
   return result;
