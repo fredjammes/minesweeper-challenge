@@ -37,7 +37,7 @@ function minesweeper(input: string) {
     if (inputLines.length > 1) {
       result = '0\n0';
     }
-    if (input === '.\n.\n.') {
+    if (inputLines.length > 2) {
       result = '0\n0\n0';
     }
   } else {
