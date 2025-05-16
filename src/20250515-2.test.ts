@@ -12,10 +12,7 @@ function isMine(solvingChar: string) {
   return solvingChar === '*';
 }
 
-function solveCell(input: string, x: number) {
-  if (isMine(input[x])) {
-    return '*';
-  }
+function countNeighbourMine(input: string, x: number) {
   let neighbourMineCount = 0;
   if (isMine(input[x + 1])) {
     neighbourMineCount++;
@@ -24,6 +21,13 @@ function solveCell(input: string, x: number) {
     neighbourMineCount++;
   }
   return neighbourMineCount;
+}
+
+function solveCell(input: string, x: number) {
+  if (isMine(input[x])) {
+    return '*';
+  }
+  return countNeighbourMine(input, x);
 }
 
 function minesweeper(input: string) {
@@ -49,6 +53,7 @@ describe('20250515-2', () => {
     ['*.', '*1'],
     ['*.*', '*2*'],
     ['*.**', '*2**'],
+    // ['.\n.', '0\n0'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
