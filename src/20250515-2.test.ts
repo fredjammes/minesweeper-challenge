@@ -8,15 +8,18 @@ import { describe, expect, test } from 'vitest';
 // 1234*2
 // 01*211
 
-function solveCell() {
+function solveCell(input: string) {
+  if (input === '*') {
+    return '*';
+  }
   return '0';
 }
 
-function minesweeper(s: string) {
+function minesweeper(input: string) {
   let result = '';
   let x = 0;
-  while (s.length > x) {
-    result += solveCell();
+  while (input.length > x) {
+    result += solveCell(input);
     x++;
   }
   return result;
@@ -29,6 +32,7 @@ describe('20250515-2', () => {
     ${'.'}      | ${'0'}
     ${'..'}     | ${'00'}
     ${'...'}    | ${'000'}
+    ${'*'}      | ${'*'}
   `('', ({ input, expected }) => {
     expect(minesweeper(input)).toBe(expected);
   });
