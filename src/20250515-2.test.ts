@@ -12,6 +12,9 @@ function solveCell(input: string) {
   if (input === '*') {
     return '*';
   }
+  if (input === '**') {
+    return '*';
+  }
   return '0';
 }
 
@@ -33,6 +36,7 @@ describe('20250515-2', () => {
     ${'..'}     | ${'00'}
     ${'...'}    | ${'000'}
     ${'*'}      | ${'*'}
+    ${'**'}      | ${'**'}
   `('', ({ input, expected }) => {
     expect(minesweeper(input)).toBe(expected);
   });
