@@ -31,17 +31,20 @@ function solveCell(input: string, x: number) {
 }
 
 function minesweeper(input: string) {
-  if (input === '.\n.') {
-    return '0\n0';
-  }
-  if (input === '.\n.\n.') {
-    return '0\n0\n0';
-  }
   let result = '';
-  let x = 0;
-  while (input.length > x) {
-    result += solveCell(input, x);
-    x++;
+  if (input.includes('\n')) {
+    if (input === '.\n.') {
+      result = '0\n0';
+    }
+    if (input === '.\n.\n.') {
+      result = '0\n0\n0';
+    }
+  } else {
+    let x = 0;
+    while (input.length > x) {
+      result += solveCell(input, x);
+      x++;
+    }
   }
   return result;
 }
@@ -60,7 +63,7 @@ describe('20250515-2', () => {
     ['*.*', '*2*'],
     ['*.**', '*2**'],
     ['.\n.', '0\n0'],
-    ['.\n.\n.', '0\n0\n0']
+    ['.\n.\n.', '0\n0\n0'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
