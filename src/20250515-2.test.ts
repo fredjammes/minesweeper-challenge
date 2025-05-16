@@ -48,6 +48,7 @@ describe('20250515-2', () => {
     ['.*', '1*'],
     ['*.', '*1'],
     ['*.*', '*2*'],
+    ['*.**', '*2**'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
