@@ -42,19 +42,16 @@ function solveLine(input: string) {
 
 function minesweeper(input: string) {
   let result = '';
-  if (input.includes('\n')) {
-    const inputLines = input.split('\n');
-    let y = 0;
-    while (y < inputLines.length) {
-      result += solveLine(inputLines[y]);
-      y++;
-      if (y !== inputLines.length) {
-        result += '\n';
-      }
+  const inputLines = input.split('\n');
+  let y = 0;
+  while (y < inputLines.length) {
+    result += solveLine(inputLines[y]);
+    y++;
+    if (y !== inputLines.length) {
+      result += '\n';
     }
-  } else {
-    result = solveLine(input);
   }
+  
   return result;
 }
 
