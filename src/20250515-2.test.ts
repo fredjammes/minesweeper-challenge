@@ -19,6 +19,9 @@ function solveCell(input: string, x: number) {
   if (isMine(input[x + 1])) {
     return '1';
   }
+  if (isMine(input[x - 1])) {
+    return '1';
+  }
   return '0';
 }
 
@@ -42,6 +45,7 @@ describe('20250515-2', () => {
     ['**', '**'],
     ['***', '***'],
     ['.*', '1*'],
+    ['*.', '*1'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
