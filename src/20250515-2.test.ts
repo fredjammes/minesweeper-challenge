@@ -47,10 +47,13 @@ function minesweeper(input: string) {
     let y = 0;
     result = solveLine(inputLines[y]);
     y++;
-    while (inputLines.length > y) {
-      result += '\n';
+    result += '\n';
+    while (y < inputLines.length) {
       result += solveLine(inputLines[y]);
       y++;
+      if (y !== inputLines.length) {
+        result += '\n';
+      }
     }
   } else {
     result = solveLine(input);
