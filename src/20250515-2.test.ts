@@ -51,7 +51,7 @@ function minesweeper(input: string) {
       result += '\n';
     }
   }
-  
+
   return result;
 }
 
@@ -69,7 +69,7 @@ describe('20250515-2', () => {
     ['*.*', '*2*'],
     ['*.**', '*2**'],
     ['.\n.', '0\n0'],
-    // ['.\n.\n.', '0\n0\n0'],
+    ['.\n.\n.', '0\n0\n0'],
     // ['..\n.', '00\n0'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
