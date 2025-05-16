@@ -12,6 +12,9 @@ function solveCell(input: string, x: number) {
   if (input[x] === '*') {
     return '*';
   }
+  if (input[x + 1] === '*') {
+    return '1';
+  }
   return '0';
 }
 
@@ -34,7 +37,7 @@ describe('20250515-2', () => {
     ['*', '*'],
     ['**', '**'],
     ['***', '***'],
-    ['.*', '0*'], // wrong test in order to handle only the * case
+    ['.*', '1*'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
