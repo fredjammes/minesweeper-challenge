@@ -45,8 +45,8 @@ function minesweeper(input: string) {
     y++;
     if (inputLines.length > y) {
       result += '\n0';
+      y++;
     }
-    y++;
 
   } else {
     let x = 0;
