@@ -16,13 +16,14 @@ function solveCell(input: string, x: number) {
   if (isMine(input[x])) {
     return '*';
   }
+  let neighbourMineCount = 0;
   if (isMine(input[x + 1])) {
-    return '1';
+    neighbourMineCount++;
   }
   if (isMine(input[x - 1])) {
-    return '1';
+    neighbourMineCount++;
   }
-  return '0';
+  return neighbourMineCount;
 }
 
 function minesweeper(input: string) {
@@ -46,6 +47,7 @@ describe('20250515-2', () => {
     ['***', '***'],
     ['.*', '1*'],
     ['*.', '*1'],
+    ['*.*', '*2*'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
