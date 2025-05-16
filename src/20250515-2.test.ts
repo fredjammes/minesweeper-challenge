@@ -9,10 +9,7 @@ import { describe, expect, test } from 'vitest';
 // 01*211
 
 function solveCell(input: string) {
-  if (input === '*') {
-    return '*';
-  }
-  if (input === '**') {
+  if (input.includes('*')) {
     return '*';
   }
   return '0';
