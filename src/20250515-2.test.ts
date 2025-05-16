@@ -35,7 +35,8 @@ function minesweeper(input: string) {
   if (input.includes('\n')) {
     const inputLines = input.split('\n');
     result = '0';
-    if (inputLines.length > 0) {
+    let y = 0;
+    if (inputLines.length > y) {
     }
     if (inputLines.length > 1) {
       result += '\n0';
