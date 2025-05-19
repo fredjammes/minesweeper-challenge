@@ -41,18 +41,15 @@ function solveLine(input: string) {
 }
 
 function minesweeper(input: string) {
-  let result = '';
   const inputLines = input.split('\n');
+  const solvedLines = [];
   let y = 0;
   while (y < inputLines.length) {
-    result += solveLine(inputLines[y]);
+    solvedLines.push(solveLine(inputLines[y]));
     y++;
-    if (y !== inputLines.length) {
-      result += '\n';
-    }
   }
 
-  return result;
+  return solvedLines.join('\n');
 }
 
 describe('20250519', () => {
