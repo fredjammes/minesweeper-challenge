@@ -30,11 +30,12 @@ function solveCell(input: string, x: number) {
   return countNeighbourMine(input, x);
 }
 
-function solveLine(input: string) {
+function solveLine(lines: string[], y: number) {
   let result = '';
   let x = 0;
-  while (input.length > x) {
-    result += solveCell(input, x);
+  let currentLine = lines[y];
+  while (currentLine.length > x) {
+    result += solveCell(currentLine, x);
     x++;
   }
   return result;
@@ -45,7 +46,7 @@ function minesweeper(input: string) {
   const solvedLines = [];
   let y = 0;
   while (y < inputLines.length) {
-    solvedLines.push(solveLine(inputLines[y]));
+    solvedLines.push(solveLine(inputLines, y));
     y++;
   }
 
@@ -70,7 +71,7 @@ describe('20250519', () => {
     ['..\n.', '00\n0'],
     ['*\n*', '*\n*'],
     // ['.\n*', '1\n*'],
-    
+
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
