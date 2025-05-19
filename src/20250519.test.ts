@@ -12,12 +12,12 @@ function isMine(solvingChar: string) {
   return solvingChar === '*';
 }
 
-function countNeighbourMine(input: string, x: number) {
+function countNeighbourMine(lines: string[], x: number, y: number) {
   let neighbourMineCount = 0;
-  if (isMine(input[x + 1])) {
+  if (isMine(lines[y][x + 1])) {
     neighbourMineCount++;
   }
-  if (isMine(input[x - 1])) {
+  if (isMine(lines[y][x - 1])) {
     neighbourMineCount++;
   }
   return neighbourMineCount;
@@ -27,7 +27,7 @@ function solveCell(lines: string[], x: number, y: number) {
   if (isMine(lines[y][x])) {
     return '*';
   }
-  return countNeighbourMine(lines[y], x);
+  return countNeighbourMine(lines, x, y);
 }
 
 function solveLine(lines: string[], y: number) {
