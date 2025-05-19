@@ -72,6 +72,7 @@ describe('20250519', () => {
     ['.\n.\n.', '0\n0\n0'],
     ['..\n.', '00\n0'],
     ['*\n*', '*\n*'],
+    // ['.\n*', '1\n*'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
