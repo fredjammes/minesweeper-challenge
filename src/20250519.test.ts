@@ -20,6 +20,9 @@ function countNeighbourMine(lines: string[], x: number, y: number) {
   if (isMine(lines[y][x - 1])) {
     neighbourMineCount++;
   }
+  if (lines[y + 1] && isMine(lines[y + 1][x])) {
+    neighbourMineCount++;
+  }
   return neighbourMineCount;
 }
 
@@ -69,8 +72,7 @@ describe('20250519', () => {
     ['.\n.\n.', '0\n0\n0'],
     ['..\n.', '00\n0'],
     ['*\n*', '*\n*'],
-    // ['.\n*', '1\n*'],
-
+    ['.\n*', '1\n*'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
