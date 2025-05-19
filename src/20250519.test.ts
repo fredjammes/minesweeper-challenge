@@ -1,12 +1,8 @@
 import { describe, expect, test } from 'vitest';
 
-// .*.**.
-// ....*.
-// ..*...
+// .*.**.\n....*.\n..*...
 // gives
-// 1*2**2
-// 1234*2
-// 01*211
+// 1*2**2\n1234*2\n01*211
 
 function isMine(solvingChar: string) {
   return solvingChar === '*';
@@ -93,6 +89,7 @@ describe('20250519', () => {
     ['.*\n..', '1*\n11'],
     ['..\n*.', '11\n*1'],
     ['..\n.*', '11\n1*'],
+    ['.*.**.\n....*.\n..*...', '1*2**2\n1234*2\n01*211'],
   ])('', (input, expected) => {
     expect(minesweeper(input)).toBe(expected);
   });
