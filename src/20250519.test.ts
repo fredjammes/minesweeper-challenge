@@ -10,29 +10,15 @@ function isMine(solvingChar: string) {
 
 function countNeighbourMine(lines: string[], x: number, y: number) {
   let neighbourMineCount = 0;
-  if (isMine(lines[y][x + 1])) {
-    neighbourMineCount++;
-  }
-  if (isMine(lines[y][x - 1])) {
-    neighbourMineCount++;
-  }
-  if (lines[y + 1] && isMine(lines[y + 1][x])) {
-    neighbourMineCount++;
-  }
-  if (lines[y - 1] && isMine(lines[y - 1][x])) {
-    neighbourMineCount++;
-  }
-  if (lines[y - 1] && isMine(lines[y - 1][x - 1])) {
-    neighbourMineCount++;
-  }
-  if (lines[y - 1] && isMine(lines[y - 1][x + 1])) {
-    neighbourMineCount++;
-  }
-  if (lines[y + 1] && isMine(lines[y + 1][x - 1])) {
-    neighbourMineCount++;
-  }
-  if (lines[y + 1] && isMine(lines[y + 1][x + 1])) {
-    neighbourMineCount++;
+  for (let i = -1; i <= 1; i++) {
+    for (let j = -1; j <= 1; j++) {
+      if (i === 0 && j === 0) {
+        continue;
+      }
+      if (lines[y + i] && isMine(lines[y + i][x + j])) {
+        neighbourMineCount++;
+      }
+    }
   }
   return neighbourMineCount;
 }
