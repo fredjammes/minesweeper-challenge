@@ -23,19 +23,18 @@ function countNeighbourMine(input: string, x: number) {
   return neighbourMineCount;
 }
 
-function solveCell(input: string, x: number) {
-  if (isMine(input[x])) {
+function solveCell(lines: string[], x: number, y: number) {
+  if (isMine(lines[y][x])) {
     return '*';
   }
-  return countNeighbourMine(input, x);
+  return countNeighbourMine(lines[y], x);
 }
 
 function solveLine(lines: string[], y: number) {
   let result = '';
   let x = 0;
-  let currentLine = lines[y];
-  while (currentLine.length > x) {
-    result += solveCell(currentLine, x);
+  while (lines[y].length > x) {
+    result += solveCell(lines, x, y);
     x++;
   }
   return result;
